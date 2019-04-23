@@ -38,6 +38,7 @@ post '/renew/:id' do
     linkTitle: params[:linkTitle],
     body: params[:body],
     url: params[:url]
+  })
     
   redirect '/'
 end
