@@ -12,8 +12,10 @@ end
 
 post '/new' do
   Contribution.create({
-    name: params[:user_name],
-    body: params[:body]
+    title: params[:title],
+    linkTitle: params[:linkTitle],
+    body: params[:body],
+    url: params[:url]
   })
 
   redirect '/'
@@ -25,15 +27,17 @@ post '/delete/:id' do
 end
 
 post '/edit/:id' do
-  @content = Contribution.find(params[:id])
+  @contents = Contribution.find(params[:id])
   erb :edit
 end
 
 post '/renew/:id' do
-  content = Contribution.find(params[:id])
+  @contents = Contribution.find(params[:id])
   content.update({
-    name: params[:user_name],
-    body: params[:body]
-  })
+    title: params[:title],
+    linkTitle: params[:linkTitle],
+    body: params[:body],
+    url: params[:url]
+    
   redirect '/'
 end

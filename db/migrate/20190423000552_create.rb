@@ -1,8 +1,11 @@
-class CreateContributuions < ActiveRecord::Migration
+class Create < ActiveRecord::Migration
   def change
     create_table :contributions do |t|
-      t.string :name
+      t.string :title
       t.string :body
+      t.string :linkTitle
+      t.string :url
+
       t.timestamps null: false
     end
   end

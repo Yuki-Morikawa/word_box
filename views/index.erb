@@ -29,17 +29,17 @@
   <main>
     <% @contents.each do |content|  %>
       <article>
-      <h2><%= @content.title %></h2>
-      <p><%= @content.body %></p>
-      <p>参考リンク:<a href="<%= @content.url %>"><%= @content.linkTitle %></a></p>
-      <div class="edit">
-          <form action="/delete/<%= @content.id %>" method="post">
-            <input type="submit" value="削除">
-          </form>
-          <form action="/edit/<%= @content.id %>" method="post">
-            <input type="submit" value="編集">
-          </form>
-      </div>
+        <h2><%= content.title %></h2>
+        <p><%= content.body %></p>
+        <p>参考リンク:<a href="<%= content.url %>"><%= content.linkTitle %></a></p>
+          <div class="edit">
+            <form action="/delete/<%= content.id %>" method="post">
+              <input type="submit" value="削除">
+            </form>
+            <form action="/edit/<%= content.id %>" method="post">
+              <input type="submit" value="編集">
+            </form>
+          </div>
       </article>
     <% end %>
   </main>
